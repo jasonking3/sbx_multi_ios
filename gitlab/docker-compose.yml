@@ -19,6 +19,7 @@ services:
       gitlab: ${GITLAB_HOST}
 
   runner1:
+    privileged: true
     image: gitlab/gitlab-runner
     environment:
       - REGISTRATION_TOKEN=sandboxrunners

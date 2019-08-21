@@ -63,7 +63,7 @@ docker-compose exec gitlab /bin/bash -c "echo external_url \'${gitlab_url}\' >> 
 docker-compose exec gitlab gitlab-ctl reconfigure 2>&1 >> gitlab_setup.log
 
 printf "Registering GitLab Runner ... "
-docker-compose exec runner1 gitlab-runner register 2>&1 >> gitlab_setup.log
+docker-compose exec runner1 gitlab-runner register --docker-privileged 2>&1 >> gitlab_setup.log
 success
 
 printf "Creating user 'developer' ..."
